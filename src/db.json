@@ -9,6 +9,11 @@
       "text": "新規Todo/a",
       "completed": false,
       "id": "1732415033898"
+    },
+    {
+      "text": "完了タスク",
+      "completed": true,
+      "id": "1732415253082"
     }
   ]
 }
