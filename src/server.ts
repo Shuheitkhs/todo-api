@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // 型の設定todo
-type Todo = { id: number; text: string; completed: boolean };
+type Todo = { id: string; text: string; completed: boolean };
 let todos: Todo[] = [];
 
 // getですべてのtodoを取得
@@ -20,7 +20,7 @@ app.get("/todos", (req: Request, res: Response) => {
 // createで新しいtodoの作成
 app.post("/todos", (req: Request, res: Response) => {
   const newTodo = {
-    id: Date.now(),
+    id: Date.now().toString(),
     text: req.body.text,
     completed: false,
   };
@@ -30,7 +30,7 @@ app.post("/todos", (req: Request, res: Response) => {
 
 // PUTで更新
 app.put("/todos/:id", (req: Request, res: Response) => {
-  const todoId = parseInt(req.params.id, 10);
+  const todoId = req.params.id;
   const matchTodo = todos.find((t) => t.id === todoId);
   if (matchTodo) {
     matchTodo.text = req.body.text ?? matchTodo.text;
@@ -43,7 +43,7 @@ app.put("/todos/:id", (req: Request, res: Response) => {
 
 // deleteで削除
 app.delete("/todos/:id", (req: Request, res: Response) => {
-  const todoId = parseInt(req.params.id, 10);
+  const todoId = req.params.id;
   todos = todos.filter((t) => t.id !== todoId);
   res.status(204).send();
 });

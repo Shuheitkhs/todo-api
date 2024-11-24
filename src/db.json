@@ -1,19 +1,14 @@
 {
   "todos": [
     {
-      "id": "1730817762442",
-      "text": "jsonサーバー",
-      "completed": false
-    },
-    {
-      "text": "PUTメソッド・保存",
+      "text": "jsonサーバー/a",
       "completed": false,
-      "id": "1730819961300"
+      "id": "1730817762442"
     },
     {
-      "id": 1730821004419,
-      "text": "タスク",
-      "completed": false
+      "text": "新規Todo/a",
+      "completed": false,
+      "id": "1732415033898"
     }
   ]
 }
